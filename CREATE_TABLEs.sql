@@ -1,3 +1,13 @@
+# Note: there is a duplicate line in the source data for RB51.
+# This will cause an issue when specifying that Linie is the primary key.
+# The BVG uses the first one, Erikaviolett, so that is the one I kept.
+
+# Some routes use black text, instead of white,
+# so I added the column `Inverse` that I intend to use to indicate this.
+
+# Also, something is up with the encoding in the source file,
+# but it only effects the human-readable colour name
+
 CREATE TABLE vbb_linienfarben (
 	Linie          VARCHAR(5) NOT NULL,
 	Farbentitel    VARCHAR(30) NULL,
