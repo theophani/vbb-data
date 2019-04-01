@@ -60,7 +60,8 @@ CREATE TABLE vbb_trips (
 	shape_id                 VARCHAR(100) NOT NULL,
 	wheelchair_accessible    BOOLEAN NULL default NULL,
 	bikes_allowed            BOOLEAN NULL default NULL,
-	PRIMARY KEY              (trip_id)
+	PRIMARY KEY              (trip_id),
+	KEY `index_on_route_id`  (`route_id`)
 );
 
 CREATE TABLE vbb_stop_times (
