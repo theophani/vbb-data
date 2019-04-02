@@ -82,3 +82,9 @@ CREATE TABLE vbb_stop_times (
 	KEY `index_on_stop_id`   (`stop_id`)
 );
 ```
+
+## Data manipulations
+
+The Linienfarben data had no entry for U55, so I duplicated the entry for U5 (with `Linie` as U55).
+
+I manually set the `Inverse` column of U4 to `true`. This is because the colour scheme, unlike the other lines, have black text, which is not captured in the dataset.
