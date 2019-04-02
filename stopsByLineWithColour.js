@@ -681,3 +681,15 @@ const stopsByLineWithColour = [
 	["U Turmstr. (Berlin)",52.525938,13.341417,"U9","#ff7300",0],
 	["U Walther-Schreiber-Platz (Berlin)",52.464998,13.328409,"U9","#ff7300",0]
 ];
+
+var linesPerStop = stopsByLineWithColour.reduce( function (r, stop) {
+	const [name, lat, lon, line, hex, inverse] = stop;
+
+	if ( r[name] ) {
+		r[name].lines.push(line);
+	} else {
+		r[name] = { name, lat, lon, hex, inverse, lines: [line] }
+	};
+
+	return r;
+}, {});
