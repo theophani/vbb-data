@@ -6,7 +6,7 @@ I am exploring the publically available free GTFS data from the VBB. I’m using
 
 The data can be downloaded here:
 
-https://www.vbb.de/unsere-themen/vbbdigital/api-entwicklerinfos/datensaetze
+[](https://www.vbb.de/unsere-themen/vbbdigital/api-entwicklerinfos/datensaetze)
 
 ## Creating tables
 
