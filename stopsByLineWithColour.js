@@ -689,7 +689,7 @@ var linesPerStop = stopsByLineWithColour.reduce( function (r, stop) {
 	if ( r[stop_name] ) {
 		r[stop_name].lines.push(line);
 	} else {
-		r[stop_name] = { name, lat, lon, lines: [line] }
+		r[stop_name] = { stop_name, lat, lon, lines: [line] }
 	};
 
 	return r;
