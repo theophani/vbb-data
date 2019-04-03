@@ -683,12 +683,13 @@ const stopsByLineWithColour = [
 ];
 
 var linesPerStop = stopsByLineWithColour.reduce( function (r, stop) {
-	const [name, lat, lon, line, hex, inverse] = stop;
+	const [stop_name, lat, lon, line_name, hex, inverse] = stop;
+	const line = { line_name, hex, inverse };
 
-	if ( r[name] ) {
-		r[name].lines.push(line);
+	if ( r[stop_name] ) {
+		r[stop_name].lines.push(line);
 	} else {
-		r[name] = { name, lat, lon, hex, inverse, lines: [line] }
+		r[stop_name] = { name, lat, lon, lines: [line] }
 	};
 
 	return r;
