@@ -5,12 +5,12 @@
 <title>VBB Roulette</title>
 <meta name="viewport" content="initial-scale=1">
 <style>
-  font-face {
+  @font-face {
     font-family: "roulette";
     src: url("fonts/Roulette.eot");
     src: url("fonts/Roulette.eot?#iefix") format("embedded-opentype"), url("fonts/Roulette.woff") format("woff");
     font-weight: normal;
-    font-style: normal
+    font-style: normal;
   }
 
   @font-face {
@@ -18,7 +18,7 @@
     src: url("fonts/Roulette-Bold.eot");
     src: url("fonts/Roulette-Bold.eot?#iefix") format("embedded-opentype"), url("fonts/Roulette-Bold.woff") format("woff");
     font-weight: bold;
-    font-style: normal
+    font-style: normal;
   }
 
   @font-face {
@@ -26,7 +26,7 @@
     src: url("fonts/Roulette-Italic.eot");
     src: url("fonts/Roulette-Italic.eot?#iefix") format("embedded-opentype"), url("fonts/Roulette-Italic.woff") format("woff");
     font-weight: normal;
-    font-style: italic
+    font-style: italic;
   }
 
   @font-face {
@@ -34,41 +34,121 @@
     src: url("fonts/Roulette-BoldItalic.eot");
     src: url("fonts/Roulette-BoldItalic.eot?#iefix") format("embedded-opentype"), url("fonts/Roulette-BoldItalic.woff") format("woff");
     font-weight: bold;
-    font-style: italic
+    font-style: italic;
   }
 
   @font-face {
     font-family: "roulette-icon";
     src: url("fonts/RouletteIcon.eot");
-    src: url("fonts/RouletteIcon.eot?#iefix")
-    format("embedded-opentype"), url("fonts/RouletteIcon.ttf") format("truetype"), url("fonts/RouletteIcon.woff") format("woff");
+    src: url("fonts/RouletteIcon.eot?#iefix") format("embedded-opentype"), url("fonts/RouletteIcon.ttf") format("truetype"), url("fonts/RouletteIcon.woff") format("woff");
     font-weight: normal;
     font-style: normal
   }
-  
+
   body {
     background-color: #333; margin: 0; color: #FFF; line-height: 1.3em;
-    font-family: 'Roulette', 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
-    font-size: 48px;
-    padding: 3em 0.5em;
+    font-family: 'roulette', 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+    font-size: 46px;
+    padding: 0;
     font-weight: bold;
   }
-  
-  a { text-decoration: none; color: #FFF; border-bottom: 0.1em #fff solid; }
-  a:hover { background-color: #777 }
-  
-  @media screen and (max-device-width: 480px) {
-    /* nothing for now */
+
+  html, body {
+    height: 100%;
   }
-  
+
+  .card {
+    display: block;
+    height: 100%;
+  }
+
+  .card-contents {
+    padding: 3em 0.5em;
+  }
+
+  a { text-decoration: none; color: #FFF; border-bottom: 0.1em #fff solid; }
+  a:hover, a:active, a:focus { background-color: #777 }
+
+  #greeting {
+    display: none;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .intro {
+    font-size: 0.6em;
+    font-weight: normal;
+  }
+
+  .directions {
+    font-size: 0.3em;
+    font-weight: normal;
+  }
+
+  ul.lines {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+  }
+
+  ul.lines li {
+    margin-right: 0.25em;
+    float: left;
+    font-size: 0.6em;
+    font-weight: normal;
+  }
+
+  button#start {
+    background: white;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.25em;
+    padding: 0.25em;
+    margin: auto;
+    display: block;
+    width: auto;
+  }
+
+  @media screen and (max-device-width: 370px) {
+    body {
+      font-size: 40px;
+    }
+  }
+
 </style>
 </head>
 <body>
 
-  hello vbb
-  <br>
-  this is what a <a href="">link</a> looks like
+  <div id="greeting" class="card">
+    <div class="card-contents">
+      <button id="start">Start an adventure</button>
+    </div>
+  </div>
+
+  <div id="location" class="card">
+    <div class="card-contents">
+      <p class="intro">Your adventure begins at</p>
+      <p class="stop_name">S+U Gesundbrunnen</p>
+      <ul class="lines">
+        <li>S41</li>
+        <li>S42</li>
+        <li>U8</li>
+      </ul>
+      <p class="directions">
+        <a href="">Directions via Google Maps</a>
+      </p>
+    </div>
+  </div>
 
   <script src="stopsByLineWithColour.js"></script>
+  <script src="roulette.js"></script>
 </body>
 </html>
