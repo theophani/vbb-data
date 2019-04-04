@@ -85,6 +85,7 @@
   .directions {
     font-size: 0.3em;
     font-weight: normal;
+    line-height: 2;
   }
 
   ul.lines {
@@ -104,14 +105,18 @@
     font-weight: normal;
   }
 
-  button#start {
+  .start-adventure {
     background: white;
+    color: black;
     font-size: inherit;
     font-family: inherit;
     font-weight: bold;
     border: none;
     border-radius: 0.25em;
     padding: 0.25em;
+  }
+
+  .main-start {
     margin: auto;
     display: block;
     width: auto;
@@ -129,7 +134,7 @@
 
   <div id="greeting" class="card">
     <div class="card-contents">
-      <button id="start">Start an adventure on the VBB</button>
+      <button class="start-adventure main-start">Start an adventure on the VBB</button>
     </div>
   </div>
 
@@ -144,6 +149,7 @@
       </ul>
       <p class="directions">
         <a href="">Directions via Google Maps</a>
+        <br><button class="start-adventure">Start a different adventure<button>
       </p>
     </div>
   </div>

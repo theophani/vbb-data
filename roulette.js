@@ -18,10 +18,12 @@ function suggest () {
 	const stopNameElem = document.querySelector('#location .stop_name');
 	const linesList = document.querySelector('#location .lines');
 	const mapLink = document.querySelector('#location .directions a');
+	const miniStartButton = document.querySelector("#location .start-adventure");
 
 	const stop = randomStop();
 
 	locationCard.style.backgroundColor = stop.lines[0].hex;
+	miniStartButton.style.color = stop.lines[0].hex;
 	stopNameElem.innerText = stop.stop_name;
 	linesList.innerHTML = "";
 	stop.lines.forEach(function (line) {
@@ -35,7 +37,10 @@ function suggest () {
 }
 
 displayCard(greetingCard);
-document.getElementById("start").addEventListener('click', suggest);
+
+[...document.querySelectorAll(".start-adventure")].forEach(function (button) {
+  button.addEventListener('click', suggest);
+});
 
 
 
