@@ -3,10 +3,11 @@ const body = document.querySelector('body');
 const locationCard = document.querySelector('#location');
 const greetingCard = document.getElementById("greeting");
 
-function displayCard (card) {
+function displayCard (card, inverse) {
 	locationCard.style.display = 'none';
 	greetingCard.style.display = 'none';
 	card.style.display = 'block'
+	body.className = inverse ? "inverse" : "";
 }
 
 function getStopByName (stop_name) {
@@ -25,6 +26,7 @@ function showStop (stop) {
 	const mapLink = document.querySelector('#location .directions');
 
 	body.style.backgroundColor = stop.lines[0].hex;
+
 	stopNameElem.innerText = stop.stop_name;
 	linesList.innerHTML = "";
 	stop.lines.forEach(function (line) {
@@ -34,7 +36,7 @@ function showStop (stop) {
 	});
 	mapLink.href = 'https://www.google.com/maps/search/' + stop.stop_name;
 
-	displayCard(locationCard);
+	displayCard(locationCard, stop.lines[0].inverse);
 }
 
 function suggest () {
