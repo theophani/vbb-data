@@ -72,9 +72,10 @@ window.addEventListener('popstate', function (evt) {
 });
 
 [...document.querySelectorAll(".start-adventure")].forEach(function (button) {
-  button.addEventListener('click', suggest);
+	button.addEventListener('click', suggest);
 });
 
 const startingStop = getStopByName(urlParams.s);
+history.replaceState({ stop: startingStop }, undefined);
 showStopFromHistory(startingStop);
 
