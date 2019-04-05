@@ -22,11 +22,9 @@ function randomStop () {
 function showStop (stop) {
 	const stopNameElem = document.querySelector('#location .stop_name');
 	const linesList = document.querySelector('#location .lines');
-	const mapLink = document.querySelector('#location .directions a');
-	const miniStartButton = document.querySelector("#location .start-adventure");
+	const mapLink = document.querySelector('#location .directions');
 
 	body.style.backgroundColor = stop.lines[0].hex;
-	miniStartButton.style.color = stop.lines[0].hex;
 	stopNameElem.innerText = stop.stop_name;
 	linesList.innerHTML = "";
 	stop.lines.forEach(function (line) {
@@ -41,8 +39,8 @@ function showStop (stop) {
 
 function suggest () {
 	const stop = randomStop();
-	showStop(randomStop());
 	history.pushState({ stop: stop }, undefined, '?s=' + stop.stop_name);
+	showStop(stop);
 }
 
 const urlParams = function (window_object = window) {

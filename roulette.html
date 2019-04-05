@@ -61,25 +61,25 @@
     cursor: pointer;
   }
 
-  button.main-start {
-    box-shadow: 0.1em 0.1em 0px #000;
-  }
-
   .card {
-    display: block;
     height: 100%;
+    display: none;
+    position: relative;
   }
 
   .card-contents {
-    padding: 2.5em 0.5em;
+    padding: 2.5em 0.5em 0.5em 0.5em;
   }
 
-  #location, #greeting {
-    display: none;
+  #greeting .card-contents {
+    padding: 0 0.5em;
+    margin-top: -25%;
+    top: 50%;
+    position: relative;
   }
 
   a { text-decoration: none; color: #FFF; border-bottom: 0.1em #fff solid; }
-  a:hover, a:active, a:focus { background-color: #777 }
+  a:hover, a:focus { background-color: #777 }
 
   p {
     margin: 0;
@@ -88,13 +88,6 @@
   .intro {
     font-size: 0.6em;
     font-weight: normal;
-  }
-
-  .note {
-    font-size: 0.3em;
-    font-weight: normal;
-    line-height: 2;
-    margin-bottom: 2em;
   }
 
   ul.lines {
@@ -115,21 +108,55 @@
     font-weight: normal;
   }
 
-  .start-adventure {
-    background: white;
-    color: black;
-    font-size: inherit;
-    font-family: inherit;
-    font-weight: bold;
-    border: none;
-    border-radius: 0.25em;
-    padding: 0.25em;
-  }
-
   .main-start {
     margin: auto;
     display: block;
     width: auto;
+    box-shadow: 0.1em 0.1em 0px #000;
+    font-weight: bold;
+    background: white;
+    color: black;
+    font-size: inherit;
+    font-family: inherit;
+    border: none;
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+  }
+
+  #location .card-contents {
+  }
+
+  .stop_name {
+    word-break: break-word;
+    margin-right: -0.45em;
+  }
+
+  .choices {
+    font-weight: normal;
+    bottom: 0;
+    left:0;
+    position: absolute;
+    display: flex;
+    padding: 0.5em;
+  }
+
+  .choice {
+    line-height: 1.2;
+    font-size: 0.4em;
+    border: 0;
+    border-radius: 0.25em;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 0.3em 0.2em;
+    cursor: pointer;
+  }
+
+  .choice.left {
+    margin-right: 0.5em;
+  }
+
+  .choice.right {
+    margin-left: 0.5em;
   }
 
   @media screen and (max-device-width: 370px) {
@@ -157,12 +184,11 @@
         <li>S42</li>
         <li>U8</li>
       </ul>
-      <p class="note directions">
-        <a href="">Directions via Google Maps</a>
-      </p>
-      <p class="note">
-        <button class="start-adventure">Start a different adventure</button>
-      </p>
+
+      <div class="choices">
+        <a class="choice left directions" href="">Directions via Google Maps</a>
+        <span class="choice right start-adventure">Start a different adventure</span>
+      </div>
     </div>
   </div>
 
