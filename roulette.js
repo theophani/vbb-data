@@ -37,12 +37,12 @@ function showStop (stop) {
 	mapLink.href = 'https://www.google.com/maps/search/' + stop.stop_name;
 
 	displayCard(locationCard);
-
-	history.pushState(undefined, undefined, '?s=' + stop.stop_name);
 }
 
 function suggest () {
+	const stop = randomStop();
 	showStop(randomStop());
+	history.pushState({ stop: stop }, undefined, '?s=' + stop.stop_name);
 }
 
 const urlParams = function (window_object = window) {
@@ -58,14 +58,23 @@ const urlParams = function (window_object = window) {
   return params;
 }();
 
-const startingStop = getStopByName(urlParams.s);
-
-if (startingStop) {
-	showStop(startingStop);
-} else {
-	displayCard(greetingCard);
+function showStopFromHistory (stop) {
+	if (stop) {
+		showStop(stop);
+	} else {
+		body.style.backgroundColor = "#F0CA00";
+		displayCard(greetingCard);
+	}
 }
+
+window.addEventListener('popstate', function (evt) {
+	showStopFromHistory(evt.state && evt.state.stop);
+});
 
 [...document.querySelectorAll(".start-adventure")].forEach(function (button) {
   button.addEventListener('click', suggest);
 });
+
+const startingStop = getStopByName(urlParams.s);
+showStopFromHistory(startingStop);
+
