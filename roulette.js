@@ -27,7 +27,7 @@ function showStop (stop) {
 
 	body.style.backgroundColor = stop.lines[0].hex;
 
-	stopNameElem.innerText = stop.stop_name;
+	stopNameElem.innerText = stop.stop_name.replace(/ \(Berlin\)/g, '');
 	linesList.innerHTML = "";
 	stop.lines.forEach(function (line) {
 		const li = document.createElement('li');
