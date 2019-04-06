@@ -3,10 +3,11 @@ const body = document.querySelector('body');
 const locationCard = document.querySelector('#location');
 const greetingCard = document.getElementById("greeting");
 
-function displayCard (card, inverse) {
+function displayCard (card, hex, inverse) {
 	locationCard.style.display = 'none';
 	greetingCard.style.display = 'none';
 	card.style.display = 'block'
+	body.style.backgroundColor = hex;
 	body.className = inverse ? "inverse" : "";
 }
 
@@ -14,9 +15,13 @@ function getStopByName (stop_name) {
 	return linesPerStop[stop_name];
 }
 
+function randomIndex (myArray) {
+	return Math.floor(Math.random() * myArray.length);
+}
+
 function randomStop () {
 	// this is more likely to pick stations on multiple lines
-	const index = Math.floor(Math.random() * stopsByLineWithColour.length);
+	const index = randomIndex(stopsByLineWithColour);
 	return linesPerStop[stopsByLineWithColour[index][0]];
 }
 
@@ -24,8 +29,7 @@ function showStop (stop) {
 	const stopNameElem = document.querySelector('#location .stop_name');
 	const linesList = document.querySelector('#location .lines');
 	const mapLink = document.querySelector('#location .directions');
-
-	body.style.backgroundColor = stop.lines[0].hex;
+	const colorLine = stop.lines[randomIndex(stop.lines)];
 
 	stopNameElem.innerText = stop.stop_name.replace(/ \(Berlin\)/g, '');
 	linesList.innerHTML = "";
@@ -36,7 +40,8 @@ function showStop (stop) {
 	});
 	mapLink.href = 'https://www.google.com/maps/search/' + stop.stop_name;
 
-	displayCard(locationCard, stop.lines[0].inverse);
+
+	displayCard(locationCard, colorLine.hex, colorLine.inverse);
 }
 
 function suggest () {
@@ -62,8 +67,7 @@ function showStopFromHistory (stop) {
 	if (stop) {
 		showStop(stop);
 	} else {
-		body.style.backgroundColor = "#F0CA00";
-		displayCard(greetingCard);
+		displayCard(greetingCard, '#F0CA00');
 	}
 }
 
@@ -71,7 +75,7 @@ window.addEventListener('popstate', function (evt) {
 	showStopFromHistory(evt.state && evt.state.stop);
 });
 
-[...document.querySelectorAll(".start-adventure")].forEach(function (button) {
+[...document.querySelectorAll('.start-adventure')].forEach(function (button) {
 	button.addEventListener('click', suggest);
 });
 
