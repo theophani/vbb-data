@@ -1,21 +1,4 @@
 "stop_name","stop_lat","stop_lon","route_short_name","Hex","Inverse"
-"Angern-Rogätz, Bahnhof",52.339029,11.759805,"S1","#e64dff",0
-"Demker, Bahnhof",52.517102,11.854104,"S1","#e64dff",0
-"Eichstedt (Altmark), Bahnhof",52.674806,11.854882,"S1","#e64dff",0
-"Geestgottberg, Bahnhof",52.956329,11.736930,"S1","#e64dff",0
-"Goldbeck (bei Osterburg), Bahnhof",52.716191,11.858197,"S1","#e64dff",0
-"Magdeburg, Bahnhof Barleber See",52.214348,11.640929,"S1","#e64dff",0
-"Magdeburg, Bahnhof Buckau",52.109119,11.629965,"S1","#e64dff",0
-"Magdeburg, Bahnhof Hasselbachplatz",52.122478,11.625445,"S1","#e64dff",0
-"Magdeburg, Bahnhof Rothensee",52.186303,11.648246,"S1","#e64dff",0
-"Magdeburg, Bahnhof Salbke",52.080728,11.656427,"S1","#e64dff",0
-"Magdeburg, Bahnhof SKET Industriepark",52.097703,11.637851,"S1","#e64dff",0
-"Magdeburg, Bahnof Südost",52.070340,11.669646,"S1","#e64dff",0
-"Magdeburg, Eichenweiler Bahnhof",52.166452,11.657931,"S1","#e64dff",0
-"Magdeburg, Hauptbahnhof",52.130196,11.627439,"S1","#e64dff",0
-"Magdeburg-Neustadt, Bahnhof",52.148924,11.641805,"S1","#e64dff",0
-"Mahlwinkel, Bahnhof",52.393498,11.788141,"S1","#e64dff",0
-"Osterburg, Bahnhof",52.787728,11.760416,"S1","#e64dff",0
 "S Anhalter Bahnhof (Berlin)",52.504538,13.382077,"S1","#e64dff",0
 "S Birkenwerder Bhf",52.687867,13.288418,"S1","#e64dff",0
 "S Borgsdorf",52.714491,13.276771,"S1","#e64dff",0
@@ -51,46 +34,9 @@
 "S+U Rathaus Steglitz (Berlin)",52.455066,13.322152,"S1","#e64dff",0
 "S+U Wittenau (Berlin)",52.596392,13.335481,"S1","#e64dff",0
 "S+U Yorckstr. S1 U7 (Berlin)",52.492345,13.367986,"S1","#e64dff",0
-"Schönebeck Süd",52.006752,11.737305,"S1","#e64dff",0
-"Schönebeck(Elbe)",52.018794,11.733157,"S1","#e64dff",0
-"Schönebeck-Bad Salzelmen",51.998364,11.723627,"S1","#e64dff",0
-"Schönebeck-Frohse",52.033917,11.707384,"S1","#e64dff",0
-"Seehausen (Altmark), Bahnhof",52.885488,11.743531,"S1","#e64dff",0
-"Stendal, Bahnhof",52.595007,11.854614,"S1","#e64dff",0
-"Stendal, Bahnhof Stadtsee",52.606836,11.836728,"S1","#e64dff",0
-"Tangerhütte, Bahnhof",52.436171,11.811890,"S1","#e64dff",0
-"Wittenberge, Bahnhof",53.002077,11.762899,"S1","#e64dff",0
-"Wolmirstedt, Bahnhof",52.250450,11.635337,"S1","#e64dff",0
-"Zielitz, Bahnhof",52.297052,11.680380,"S1","#e64dff",0
-"Zielitz, Bahnhof Ort",52.287711,11.675890,"S1","#e64dff",0
-"Bergwitz",51.803696,12.576213,"S2","#269900",0
 "Berlin, Insulaner",52.459082,13.348461,"S2","#269900",0
 "Bernau, Abzweig Wohnsiedlung",52.669124,13.560740,"S2","#269900",0
 "Bernau, Zepernicker Chaussee",52.671809,13.564055,"S2","#269900",0
-"Bitterfeld, Bahnhof",51.622646,12.316620,"S2","#269900",0
-"Blönsdorf, Bahnhof",51.955514,12.895806,"S2","#269900",0
-"Bülzig, Bahnhof",51.894872,12.752553,"S2","#269900",0
-"Burgkemnitz",51.688818,12.407167,"S2","#269900",0
-"Delitzsch unt Bf",51.525227,12.345218,"S2","#269900",0
-"Gräfenhainichen",51.724731,12.460037,"S2","#269900",0
-"Jüterbog, Bahnhof",51.997928,13.055159,"S2","#269900",0
-"Leipzig Essener Straße",51.376358,12.396988,"S2","#269900",0
-"Leipzig, Bayerischer Bhf",51.329527,12.381395,"S2","#269900",0
-"Leipzig, Hauptbahnhof",51.344817,12.381321,"S2","#269900",0
-"Leipzig, Markt",51.340740,12.374442,"S2","#269900",0
-"Leipzig, MDR",51.320082,12.386266,"S2","#269900",0
-"Leipzig, Messe Bhf",51.396106,12.389076,"S2","#269900",0
-"Leipzig, Nord",51.363797,12.401107,"S2","#269900",0
-"Leipzig, Völkerschlachtdenkmal",51.318685,12.406120,"S2","#269900",0
-"Leipzig, Wilhelm-Leuschner-Platz",51.335551,12.375189,"S2","#269900",0
-"Leipzig-Stötteritz, Bahnhof",51.323756,12.410684,"S2","#269900",0
-"Lutherstadt Wittenberg, Hauptbahnhof",51.867536,12.661997,"S2","#269900",0
-"Muldenstein",51.667787,12.354047,"S2","#269900",0
-"Niedergörsdorf, Bahnhof",51.967879,12.978498,"S2","#269900",0
-"Petersroda",51.569691,12.285408,"S2","#269900",0
-"Pratau",51.843256,12.635964,"S2","#269900",0
-"Rackwitz (bei Leipzig), Bahnhof",51.440743,12.374915,"S2","#269900",0
-"Radis",51.754704,12.504183,"S2","#269900",0
 "S Anhalter Bahnhof (Berlin)",52.504538,13.382077,"S2","#269900",0
 "S Attilastr. (Berlin)",52.447298,13.361177,"S2","#269900",0
 "S Bernau Bhf",52.676233,13.593034,"S2","#269900",0
@@ -120,12 +66,9 @@
 "S+U Pankow (Berlin)",52.567281,13.412279,"S2","#269900",0
 "S+U Potsdamer Platz Bhf (Berlin)",52.509340,13.376454,"S2","#269900",0
 "S+U Yorckstr. S2 S25 S26 U7 (Berlin)",52.492323,13.372226,"S2","#269900",0
-"Zahna, Bahnhof",51.918892,12.779350,"S2","#269900",0
 "Zepernick, Kirche",52.654847,13.542360,"S2","#269900",0
 "Zepernick, Poststr.",52.656292,13.534193,"S2","#269900",0
 "Zepernick, Schweizer Str.",52.645316,13.526067,"S2","#269900",0
-"Zörnigall, Bahnhof",51.882925,12.731527,"S2","#269900",0
-"Zschortau",51.483266,12.361585,"S2","#269900",0
 "S Alt-Reinickendorf (Berlin)",52.577969,13.349747,"S25","#269900",0
 "S Anhalter Bahnhof (Berlin)",52.504538,13.382077,"S25","#269900",0
 "S Bornholmer Str. (Berlin)",52.554763,13.397841,"S25","#269900",0
