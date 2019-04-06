@@ -1,4 +1,4 @@
-const stopsByLineWithColour = [
+let stopsByLineWithColour = [
 	["S Anhalter Bahnhof (Berlin)", 52.504538, 13.382077, "S1", "#e64dff", 0],
 	["S Birkenwerder Bhf", 52.687867, 13.288418, "S1", "#e64dff", 0],
 	["S Borgsdorf", 52.714491, 13.276771, "S1", "#e64dff", 0],
@@ -624,6 +624,28 @@ const stopsByLineWithColour = [
 	["U Turmstr. (Berlin)", 52.525938, 13.341417, "U9", "#ff7300", 0],
 	["U Walther-Schreiber-Platz (Berlin)", 52.464998, 13.328409, "U9", "#ff7300", 0]
 ];
+
+function cleanStop (stop) {
+	stop[0] = cleanStopName(stop[0]);
+	return stop;
+}
+
+function cleanStopName (stop_name) {
+	if (stop_name.includes('S+U Yorckstr.')) {
+		// strip clarifications about which Yorckstr it is
+		return 'S+U Yorckstr. (Berlin)';
+	}
+
+	if (stop_name.includes('S+U Alexanderplatz')) {
+		// Unify the name for Alexanderplatz
+		return 'S+U Alexanderplatz Bhf (Berlin)';
+	}
+
+	// strip and clarifications like “[U2]” from the name
+	return stop_name.replace(/ \[.*\]/, '');
+}
+
+stopsByLineWithColour = stopsByLineWithColour.map(cleanStop);
 
 var linesPerStop = stopsByLineWithColour.reduce( function (r, stop) {
 	const [stop_name, lat, lon, line_name, hex, inverse] = stop;
