@@ -46,7 +46,7 @@ function showStop (stop) {
 
 function suggest () {
 	const stop = randomStop();
-	history.pushState({ stop: stop }, undefined, '?s=' + stop.stop_name);
+	history.pushState({ stop: stop }, undefined, '?s=' + encodeURIComponent(stop.stop_name));
 	showStop(stop);
 }
 
