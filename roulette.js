@@ -25,13 +25,40 @@ function randomStop () {
 	return linesPerStop[stopsByLineWithColour[index][0]];
 }
 
+function niceDisplayName (stop_name) {
+
+	// This is not an empty string!
+	// It contains a zero-width space
+	const zws = "​";
+
+	const replacements = [
+		[ 'Babelsberg/Schulstr.' , 'Babelsberg/' + zws + 'Schulstr.' ],
+		[ 'Kochstr./Checkpoint'  , 'Kochstr./' + zws + 'Checkpoint'  ],
+		[ 'Naturkundemuseum'     , 'Naturkunde' + zws + 'museum'     ],
+		[ 'Schwartzkopffstr.'    , 'Schwartzkopffstr'                ],
+		[ 'Mierendorffplatz'     , 'Mierendorff' + zws + 'platz'     ],
+		[ 'Breitenbachplatz'     , 'Breitenbach' + zws + 'platz'     ],
+		[ 'Hohenzollerndamm'     , 'Hohenzollern' + zws + 'damm'     ],
+		[ 'Hohenzollernplatz'    , 'Hohenzollern' + zws + 'platz'    ],
+		[ 'Hohenschönhausen'     , 'Hohenschön' + zws + 'hausen'     ],
+		[ 'Baumschulenweg'       , 'Baumschulen' + zws + 'weg'       ],
+		[ ' (Berlin)'            , '']
+	];
+
+	replacements.forEach (function (replacement) {
+		stop_name = stop_name.replace(replacement[0], replacement[1]);
+	});
+
+	return stop_name;
+}
+
 function showStop (stop) {
 	const stopNameElem = document.querySelector('#location .stop_name');
 	const linesList = document.querySelector('#location .lines');
 	const mapLink = document.querySelector('#location .directions');
 	const colorLine = stop.lines[randomIndex(stop.lines)];
 
-	stopNameElem.innerText = stop.stop_name.replace(/ \(Berlin\)/g, '');
+	stopNameElem.innerText = niceDisplayName(stop.stop_name);
 	linesList.innerHTML = "";
 	stop.lines.forEach(function (line) {
 		const li = document.createElement('li');
