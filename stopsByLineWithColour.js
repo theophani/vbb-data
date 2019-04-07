@@ -627,7 +627,6 @@ let stopsByLineWithColour = [
 
 function cleanStop (stop) {
 	stop[0] = cleanStopName(stop[0]);
-	return stop;
 }
 
 function cleanStopName (stop_name) {
@@ -645,9 +644,9 @@ function cleanStopName (stop_name) {
 	return stop_name.replace(/ \[.*\]/, '');
 }
 
-stopsByLineWithColour = stopsByLineWithColour.map(cleanStop);
+stopsByLineWithColour.forEach(cleanStop);
 
-var linesPerStop = stopsByLineWithColour.reduce( function (r, stop) {
+const linesPerStop = stopsByLineWithColour.reduce( function (r, stop) {
 	const [stop_name, lat, lon, line_name, hex, inverse] = stop;
 	const line = { line_name, hex, inverse };
 

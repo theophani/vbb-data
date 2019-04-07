@@ -1,6 +1,6 @@
 
 const body = document.querySelector('body');
-const locationCard = document.querySelector('#location');
+const locationCard = document.getElementById('location');
 const greetingCard = document.getElementById("greeting");
 
 function displayCard (card, hex, inverse) {
@@ -40,13 +40,12 @@ function showStop (stop) {
 	});
 	mapLink.href = 'https://www.google.com/maps/search/' + stop.stop_name;
 
-
 	displayCard(locationCard, colorLine.hex, colorLine.inverse);
 }
 
 function suggest () {
 	const stop = randomStop();
-	history.pushState({ stop: stop }, undefined, '?s=' + encodeURIComponent(stop.stop_name));
+	history.pushState({ stop }, undefined, '?s=' + encodeURIComponent(stop.stop_name));
 	showStop(stop);
 }
 
